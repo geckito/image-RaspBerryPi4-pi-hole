@@ -1,0 +1,41 @@
+Target: aarch64-suse-linux-gnu
+
+OnlyNative: cmake
+
+Required: qemu-linux-user
+Required: qemu-tools
+Required: build-initvm-x86_64
+Required: gptfdisk
+Required: kpartx
+Required: dosfstools
+Required: python3-kiwi_crossprepare_plugin
+
+
+%ifarch aarch64
+Target: aarch64-suse-linux
+%endif
+
+# our basic cross tool chain
+%ifnarch aarch64
+Support: cross-aarch64-gcc11
+Support: cross-aarch64-aaa_base
+Support: cross-aarch64-glibc-devel
+%endif
+Support: kernel-default
+
+# temporary workaround to break cycle dep due to wrong provides
+Preinstall: update-alternatives
+Order: update-alternatives:cross-aarch64-gcc11
+
+Ignore: libncurses6:cross-aarch64-gcc11
+Ignore: cross-aarch64-gcc11:libncurses6
+
+# the checks are mostly not valid for cross build
+Support: !post-build-checks
+
+Macros:
+# needed for build script, needs to be in sync with cross-*-aaa_base
+%cross_sysroot  /usr/%{_target_cpu}-suse-linux/sys-root
+:Macros
+
+
