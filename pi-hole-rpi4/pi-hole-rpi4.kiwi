@@ -126,6 +126,7 @@ Pi-Hole on openSUSE Leap-15.3 JeOS image for raspberrypi-4 boards
     <!--Do not install both wicked and Network Manager - boo#1141433-->
     <package name="wicked"/>
     <package name="wicked-service"/>
+    <package name="geckito-setup"/>
   </packages>
   <packages type="delete">
     <package name="patterns-base-base"/>
