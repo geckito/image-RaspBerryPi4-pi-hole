@@ -23,7 +23,7 @@ Summary:        DNS services within the Pi-hole project
 License:        EUPL-1.2
 Group:          Productivity/Networking/DNS/Servers
 Url:            https://github.com/pi-hole/FTL
-#!RemoteAssetUrl: git-https://github.com/pi-hole/FTL
+#!RemoteAssetUrl: git+https://github.com/pi-hole/FTL
 Patch1:         fix-build.patch
 BuildRequires:  cmake
 BuildRequires:  libnettle-devel

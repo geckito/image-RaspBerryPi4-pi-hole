@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- OBS-RemoteAsset: git-https://github.com/pi-hole/pi-hole -->
-<!-- OBS-RemoteAsset: git-https://github.com/pi-hole/AdminLTE -->
+<!-- OBS-RemoteAsset: git+https://github.com/pi-hole/pi-hole -->
+<!-- OBS-RemoteAsset: git+https://github.com/pi-hole/AdminLTE -->
 <!-- OBS-RemoteAsset: https://github.com/pi-hole/ftl/releases/latest/download/pihole-FTL-aarch64-linux-gnu -->
 <!-- OBS-RemoteAsset: https://ftl.pi-hole.net/macvendor.db -->
 <!-- OBS-CopyToImage: pi-hole /etc/.pihole -->
