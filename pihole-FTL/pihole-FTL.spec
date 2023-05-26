@@ -23,7 +23,7 @@ Summary:        DNS services within the Pi-hole project
 License:        EUPL-1.2
 Group:          Productivity/Networking/DNS/Servers
 Url:            https://github.com/pi-hole/FTL
-#!RemoteAssetUrl: git+https://github.com/pi-hole/FTL
+#!RemoteAssetUrl: git+https://github.com/pi-hole/FTL#v5.19.2
 Patch1:         fix-build.patch
 BuildRequires:  cmake
 BuildRequires:  libnettle-devel
@@ -32,6 +32,8 @@ BuildRequires:  libidn-devel
 BuildRequires:  libcap-devel
 BuildRequires:  readline-devel
 BuildRequires:  sqlite3-devel
+BuildRequires:  termcap
+
 
 %description
 FTLDNS (pihole-FTL) offers DNS services within the Pi-hole project. It provides blazing fast
@@ -60,7 +62,7 @@ make
 
 %install
 cd cmake
-make DESTDIR=%{buildroot} install
+make DESTDIR=%{buildroot} install VERBOSE=1
 
 %files
 %_bindir/pihole-FTL
